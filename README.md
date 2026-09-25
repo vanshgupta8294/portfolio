@@ -1,3 +1,4 @@
+![Portfolio Preview](assets/portfolio-preview.png)
 # 🌐 Vansh Gupta - Portfolio
 
 A modern and responsive personal portfolio showcasing my skills, projects, and journey as a **Data Analyst, AI Enthusiast, and Python Developer**.
