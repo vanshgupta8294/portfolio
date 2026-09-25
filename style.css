@@ -57,9 +57,11 @@ z-index:1000;
 }
 
 .logo{
-font-size:24px;
-font-weight:700;
-color:var(--primary);
+    font-size:24px;
+    font-weight:700;
+    color:#60a5fa;
+    letter-spacing:0.5px;
+    white-space:nowrap;
 }
 
 nav ul{
