@@ -190,4 +190,50 @@ scrollTopBtn.addEventListener("click", () => {
         top: 0,
         behavior: "smooth"
     });
-});
+});// ================================
+// Auto GitHub Projects
+// ================================
+
+async function loadGitHubProjects(){
+
+    const username="vanshgupta8294";
+
+    const container=document.getElementById("githubProjects");
+
+    try{
+
+        const res=await fetch(
+            `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`
+        );
+
+        const repos=await res.json();
+
+        container.innerHTML="";
+
+        repos.forEach(repo=>{
+
+            container.innerHTML+=`
+            <a href="${repo.html_url}" target="_blank" class="project-link">
+
+                <div class="glass-card project">
+
+                    <h4>🚀 ${repo.name.replace(/-/g," ")}</h4>
+
+                    <p>${repo.description || "No description available."}</p>
+
+                    <span class="project-btn">View on GitHub →</span>
+
+                </div>
+
+            </a>`;
+        });
+
+    }catch(err){
+
+        container.innerHTML="<p>Unable to load GitHub projects.</p>";
+
+    }
+
+}
+
+loadGitHubProjects();
